@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "VQbRBQlnxpxPYiklq5C+AYx4ZX9zAG+8c5Szt3eqpBQ=",
+  "Source": "PMS.HealthCare",
+  "BasePath": "_content/PMS.HealthCare",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

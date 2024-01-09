@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMS.BaseClient", "PMS.BaseClient\PMS.BaseClient.csproj", "{78ECF37E-07AC-4BA0-9556-2AEA654A82EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMS.HealthCare", "PMS.HealthCare\PMS.HealthCare.csproj", "{2956987E-8E5D-4DDF-8904-71AD18E70EB2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78ECF37E-07AC-4BA0-9556-2AEA654A82EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78ECF37E-07AC-4BA0-9556-2AEA654A82EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78ECF37E-07AC-4BA0-9556-2AEA654A82EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78ECF37E-07AC-4BA0-9556-2AEA654A82EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2956987E-8E5D-4DDF-8904-71AD18E70EB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2956987E-8E5D-4DDF-8904-71AD18E70EB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2956987E-8E5D-4DDF-8904-71AD18E70EB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2956987E-8E5D-4DDF-8904-71AD18E70EB2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {087DC60F-9917-4992-90C7-8E760FC3461B}
+	EndGlobalSection
+EndGlobal

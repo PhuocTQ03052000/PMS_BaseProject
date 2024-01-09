@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "wNseohcDsG2XDmln8N84mg5lca5ssnpNPYvZzhw+1fw=",
+  "Source": "PMS.BaseClient",
+  "BasePath": "_content/PMS.BaseClient",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "D:\\PMS_BB_Training\\C#\\PMS\\PMS.HealthCare\\PMS.HealthCare.csproj",
+      "Version": 2,
+      "Source": "PMS.HealthCare",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
