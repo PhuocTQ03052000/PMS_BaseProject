@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PMS.HealthCare")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2fbd159dfef8c84f1f8da92026785c05438db056")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c8c3f57d19b5c1ddf1272152812010c1f115ede")]
 [assembly: System.Reflection.AssemblyProductAttribute("PMS.HealthCare")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PMS.HealthCare")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

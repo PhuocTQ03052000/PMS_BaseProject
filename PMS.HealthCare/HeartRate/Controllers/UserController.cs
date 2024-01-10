@@ -21,41 +21,6 @@ namespace PMS.HealthCare.HeartRate.Controllers
 												_mapper = mapper;
 								}
 
-								//[HttpGet]
-								//[ProducesResponseType(StatusCodes.Status500InternalServerError)]
-								//public async Task<ActionResult<ResponseData>> GetDataFromExternalApi()
-								//{
-								//				try
-								//				{
-								//								// get Api thông qua phương thức GetAsync của HttpClient
-								//								var response = await _httpClient.GetAsync("https://jsonplaceholder.typicode.com/todos");
-
-								//								// kiểm tra trạng thái khi get API
-								//								if (response.IsSuccessStatusCode)
-								//								{
-								//												// hiển thị data dưới dạng string json
-								//												var responseData = await response.Content.ReadAsStringAsync();
-
-								//												// convert sang object
-								//												var obj = JsonConvert.DeserializeObject(responseData);
-
-								//												// lấy data những trường cần hiển thị thông qua mapper
-								//												var data = _mapper.Map<List<ResponseData>>(obj);
-
-								//												// trả về kết quả
-								//												return Ok(data);
-								//								}
-								//								else
-								//								{
-								//												return StatusCode((int)response.StatusCode, "Error calling external API");
-								//								}
-								//				}
-								//				catch (Exception ex)
-								//				{
-								//								return StatusCode(500, "Internal server error");
-								//				}
-								//}
-
 								[HttpGet]
 								[Route("GetCurrentAuthUser")]
 								[ProducesResponseType(StatusCodes.Status500InternalServerError)]
