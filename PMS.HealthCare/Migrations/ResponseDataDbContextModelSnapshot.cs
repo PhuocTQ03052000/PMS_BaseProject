@@ -9,7 +9,7 @@ using PMS.HealthCare.HeartRate.Data;
 
 namespace PMS.HealthCare.Migrations
 {
-    [DbContext(typeof(ResponseDataDbContext))]
+    [DbContext(typeof(UserDbContext))]
     partial class ResponseDataDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

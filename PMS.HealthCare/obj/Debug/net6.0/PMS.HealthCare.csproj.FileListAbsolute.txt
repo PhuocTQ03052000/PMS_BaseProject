@@ -294,3 +294,4 @@ D:\PMS_BB_Training\C#\PMS\PMS.HealthCare\obj\Debug\net6.0\PMS.HealthCare.genrunt
 D:\PMS_BB_Training\C#\PMS\PMS.HealthCare\obj\Debug\net6.0\ref\PMS.HealthCare.dll
 D:\PMS_BB_Training\C#\PMS\PMS.HealthCare\bin\Debug\net6.0\AutoMapper.dll
 D:\PMS_BB_Training\C#\PMS\PMS.HealthCare\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\PMS_BB_Training\C#\PMS\PMS.HealthCare\obj\Debug\net6.0\PMS.HealthCare.sourcelink.json

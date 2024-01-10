@@ -9,7 +9,7 @@ namespace PMS.HealthCare.Configuration
 								public AutoMapperConfig() 
 								{
 												// Config for differnt property name (Khác tên nhưng vẫn mapping được data)
-												CreateMap<ResponseDataDTO, ResponseData>().ReverseMap().ForMember(n => n.Title, otp => otp.MapFrom(x => x.title));
+												CreateMap<UserDTO, User>().ReverseMap().ForMember(n => n.FirstName, otp => otp.MapFrom(x => x.firstName));
 								}
 				}
 }

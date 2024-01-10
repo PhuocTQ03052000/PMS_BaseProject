@@ -14,7 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options => options.AddDefaultPolicy(policy =>
 				policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
 
-builder.Services.AddDbContext<ResponseDataDbContext>(options =>
+builder.Services.AddDbContext<UserDbContext>(options =>
 {
 				options.UseSqlServer(builder.Configuration.GetConnectionString("SpotifyWeb"));
 });

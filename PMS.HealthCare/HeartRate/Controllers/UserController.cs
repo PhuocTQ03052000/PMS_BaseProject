@@ -1,18 +1,21 @@
 ﻿using AutoMapper;
+using Azure;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using PMS.HealthCare.HeartRate.DTO;
 using PMS.HealthCare.HeartRate.Models;
+using System.Text;
 
 namespace PMS.HealthCare.HeartRate.Controllers
 {
 				[Route("api/[controller]")]
 				[ApiController]
-				public class ResponseDatasController : ControllerBase
+				public class UserController : ControllerBase
 				{
 								private readonly HttpClient _httpClient;
 								private readonly IMapper _mapper;
 
-								public ResponseDatasController(IMapper mapper)
+								public UserController(IMapper mapper)
 								{
 												_httpClient = new HttpClient();
 												_mapper = mapper;
@@ -54,35 +57,32 @@ namespace PMS.HealthCare.HeartRate.Controllers
 								//}
 
 								[HttpGet]
+								[Route("GetCurrentAuthUser")]
 								[ProducesResponseType(StatusCodes.Status500InternalServerError)]
-								public async Task<ActionResult<ResponseData>> GetCurrentAuthUser()
+								public async Task<ActionResult<User>> GetCurrentAuthUser()
 								{
 												try
 												{
-																var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsInVzZXJuYW1lIjoia21pbmNoZWxsZSIsImVtYWlsIjoia21pbmNoZWxsZUBxcS5jb20iLCJmaXJzdE5hbWUiOiJKZWFubmUiLCJsYXN0TmFtZSI6IkhhbHZvcnNvbiIsImdlbmRlciI6ImZlbWFsZSIsImltYWdlIjoiaHR0cHM6Ly9yb2JvaGFzaC5vcmcvSmVhbm5lLnBuZz9zZXQ9c2V0NCIsImlhdCI6MTcwNDc5OTUyNiwiZXhwIjoxNzA0ODAzMTI2fQ.aeGfHeyG198VgEhmCZfFduzoPXrMZLklAZcfvfYEsM4";
-																_httpClient.DefaultRequestHeaders.Add("Authorization", String.Format("Bearer {0}", token));
+																User user = await GetTokenUserLogin();
+												
+																_httpClient.DefaultRequestHeaders.Add("Authorization", String.Format("Bearer {0}", user.token));
 																// get Api thông qua phương thức GetAsync của HttpClient
 																var response = await _httpClient.GetAsync("https://dummyjson.com/auth/me");
 																
-
-																
-
 																// kiểm tra trạng thái khi get API
 																if (response.IsSuccessStatusCode)
 																{
 																				// hiển thị data dưới dạng string json
-																				var responseData = await response.Content.ReadAsStringAsync();
+																				var responseUserData = await response.Content.ReadAsStringAsync();
 
-																				var item = new ResponseData();
+																				// convert sang object
+																				var obj = JsonConvert.DeserializeObject(responseUserData);
 
-																				//// convert sang object
-																				//var obj = JsonConvert.DeserializeObject(responseData);
-
-																				//// lấy data những trường cần hiển thị thông qua mapper
-																				//var data = _mapper.Map<List<ResponseData>>(obj);
+																				// lấy data những trường cần hiển thị thông qua mapper
+																				var data = _mapper.Map<User>(obj);
 
 																				// trả về kết quả
-																				return Ok(item);
+																				return Ok(data);
 																}
 																else
 																{
@@ -93,6 +93,36 @@ namespace PMS.HealthCare.HeartRate.Controllers
 												{
 																return StatusCode(500, "Internal server error");
 												}
+								}
+
+								[NonAction]
+								public async Task<User> GetTokenUserLogin()
+								{
+												// URL call đến API đối tượng user cần đăng nhập
+												var url = "https://dummyjson.com/auth/login";
+												// Thông tin tên người dùng và mật khẩu
+												var json = "{\"username\":\"kminchelle\",\"password\":\"0lelplR\"}";
+
+												var data = new StringContent(json, Encoding.UTF8, "application/json");
+
+												//get API trong qua phương thức PostAsync của HttpClient
+												var response = await _httpClient.PostAsync(url, data);
+												var userData = new User();
+												// kiểm tra trạng thái khi get API
+												if (response.IsSuccessStatusCode)
+												{
+																// hiển thị data dưới dạng string json
+																var responseUserData = await response.Content.ReadAsStringAsync();
+
+																// convert sang object
+																var obj = JsonConvert.DeserializeObject(responseUserData);
+
+																// lấy data những trường cần hiển thị thông qua mapper
+																userData = _mapper.Map<User>(obj);
+
+												}
+												// trả về kết quả
+												return userData;
 								}
 				}
 }

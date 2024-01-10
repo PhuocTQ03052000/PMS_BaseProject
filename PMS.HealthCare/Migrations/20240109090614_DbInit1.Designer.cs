@@ -10,7 +10,7 @@ using PMS.HealthCare.HeartRate.Data;
 
 namespace PMS.HealthCare.Migrations
 {
-    [DbContext(typeof(ResponseDataDbContext))]
+    [DbContext(typeof(UserDbContext))]
     [Migration("20240109090614_DbInit1")]
     partial class DbInit1
     {

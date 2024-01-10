@@ -4,17 +4,17 @@ using PMS.HealthCare.HeartRate.Models;
 
 namespace PMS.HealthCare.HeartRate.Data
 {
-				public class ResponseDataDbContext: DbContext
+				public class UserDbContext: DbContext
 				{
-								public ResponseDataDbContext(DbContextOptions<ResponseDataDbContext> options) : base(options) { }
+								public UserDbContext(DbContextOptions<UserDbContext> options) : base(options) { }
 
 								#region DbSet
-								public DbSet<ResponseData>? ResponseDatas { get; set; }
+								public DbSet<User>? Users { get; set; }
 								#endregion DbSet
 
 								protected override void OnModelCreating(ModelBuilder modelBuilder)
 								{
-												modelBuilder.ApplyConfiguration(new ResponseDataConfig());
+												modelBuilder.ApplyConfiguration(new UserConfig());
 								}
 				}
 }
