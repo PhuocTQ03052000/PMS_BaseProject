@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using PMS.HealthCare.Configuration;
 using PMS.HealthCare.HeartRate.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,7 +19,7 @@ builder.Services.AddDbContext<UserDbContext>(options =>
 });
 
 //Auto mapper
-builder.Services.AddAutoMapper(typeof(AutoMapperConfig));
+//builder.Services.AddAutoMapper(typeof(AutoMapperConfig));
 
 var app = builder.Build();
 

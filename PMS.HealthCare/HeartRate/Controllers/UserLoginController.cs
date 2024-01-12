@@ -59,8 +59,10 @@ namespace PMS.HealthCare.HeartRate.Controllers
                     // convert sang object
                     var obj = JsonConvert.DeserializeObject<User>(responseData);
 
-                    _token = obj?.token;
-
+                    if(obj != null){
+																								_token = obj?.token;
+																				}
+                    
                     return Ok(obj);
 
                 }
